@@ -3,6 +3,8 @@
 <h1>Links</h1>
 
 <% @links.each do |link| %>
+  <p><%= link.votes.count %></p>
   <p><a href="<%= link.url %>"><%= link.title %></a></p>
   <p>Submitted by: <a href="/users/<%= link.user.id %>"><%= link.user.name %></a></p>
+  <%= button_to 'Upvote', link_votes_path(link) %>
 <% end %>

@@ -19,23 +19,6 @@ class LinksController < ApplicationController
     @link = @user.links.new(link_params)
     if @link.save
       flash[:notice] = "New link has been created!"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     else
       render 'new'
     end
