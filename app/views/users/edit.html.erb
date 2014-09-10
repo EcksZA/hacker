@@ -1,0 +1,13 @@
+<% content_for(:title, "Edit | Hacker") %>
+
+<h1>Edit User</h1>
+
+<%= render('layouts/errors', :object => @user) %>
+
+<%= render('form') %>
+
+<p><%= link_to 'Delete', user_path(@user),
+                      :data => { :confirm => 'Are you sure you want to delete this?',
+                      :method => 'delete'},
+                      :class => 'btn btn-danger' %>
+</p>
