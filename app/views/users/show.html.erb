@@ -1,3 +1,10 @@
 <% content_for(:title, 'User | Hacker') %>
 
 <h1><%= @user.name %></h1>
+
+<% @user.links.each do |link| %>
+<p><a href="<%= link.url %>"><%= link.title %></a></p>
+<% end %>
+
+<a href="/users/<%= @user.id %>/links/new" class='btn btn-success'>Create a new Link!</a>
+

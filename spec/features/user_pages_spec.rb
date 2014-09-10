@@ -24,4 +24,11 @@ describe "the user CRUD process" do
     click_link 'Delete'
     expect(page).to have_content 'Homepage'
   end
+
+  it "creates a new link for the user" do
+    user1 = User.create(name: 'example', id: 1 )
+    visit '/users/1'
+    click_link 'Create a new Link!'
+    expect(page).to have_content 'Add A New Link'
+  end
 end

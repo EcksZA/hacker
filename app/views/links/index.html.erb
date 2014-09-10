@@ -1,3 +1,8 @@
 <% content_for(:title, "Links | Hacker") %>
 
 <h1>Links</h1>
+
+<% @links.each do |link| %>
+  <p><a href="<%= link.url %>"><%= link.title %></a></p>
+  <p>Submitted by: <a href="/users/<%= link.user.id %>"><%= link.user.name %></a></p>
+<% end %>

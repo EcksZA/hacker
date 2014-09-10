@@ -5,8 +5,9 @@ class LinksController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:user_id])
-    @links = @user.links.all
+    @link = Link.find(params[:id])
+    # @user = User.find(params[:user_id])
+    # @links = @user.links.all
   end
 
   def new
@@ -18,7 +19,23 @@ class LinksController < ApplicationController
     @link = @user.links.new(link_params)
     if @link.save
       flash[:notice] = "New link has been created!"
-      redirect_to users_path
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     else
       render 'new'
     end
