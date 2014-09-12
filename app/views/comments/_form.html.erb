@@ -1,0 +1,11 @@
+<%= form_for [@link, @comment] do |f| %>
+  <div class='form-group'>
+    <%= f.label :comment %>
+  </div>
+  <div class='form-group'>
+    <%= f.text_area :comment, size: "100x10" %>
+  </div>
+  <%= f.submit(:class => 'btn btn-success') %>
+<% end %>
+
+

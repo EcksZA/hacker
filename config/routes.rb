@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   end
   resources :links, :only => [:index, :show] do
     resources :votes, :only => [:create, :destroy]
+    resources :comments, :except => :show
   end
 
 end

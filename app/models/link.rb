@@ -5,4 +5,9 @@ class Link < ActiveRecord::Base
   validates :url, presence: true
   belongs_to :user
   has_many :votes
+  has_many :comments
+
+  def vote_count
+    votes.count
+  end
 end
