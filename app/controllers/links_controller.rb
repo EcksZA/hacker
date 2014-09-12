@@ -6,8 +6,6 @@ class LinksController < ApplicationController
 
   def show
     @link = Link.find(params[:id])
-    # @user = User.find(params[:user_id])
-    # @links = @user.links.all
   end
 
   def new

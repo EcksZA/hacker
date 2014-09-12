@@ -3,4 +3,10 @@
 <h1><a href="<%= @link.url %>"><%= @link.title %></a></h1>
 <p>Submitted by <a href="/users/<%= @link.user.id %>"><%= @link.user.name %></a></p>
 
-
+<% @link.comments.each do |comment| %>
+  <p><%= comment.comment %></p>
+  <%= link_to 'Comment on this', new_comment_comment_path(comment), :class => 'btn btn-success' %>
+  <% comment.comments.each do |nested| %>
+    <p><%= nested.comment %><p>
+  <% end %>
+<% end %>
